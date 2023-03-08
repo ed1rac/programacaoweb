@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de tags</title>
+    <style type="text/css">
+        fieldset {
+            background-color: #b7d9ef;
+            width: 500px;
+        }
+
+        legend {
+            font-weight: bold;
+            font-family: "Roboto", "Segoe UI", "Arial", "Times New Roman";
+            font-size: large;
+        }
+
+        .teste {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: large;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Esse é um arquivo de exemplo</h1>
+    <hr />
+    <h2>Que legal, não é?</h2>
+    <h3>Abaixo tem uma teste legal feito em HTML + JS</h3>
+
+
+    <fieldset>
+        <legend>Exemplo de formulário com fieldset</legend>
+        <br>
+        <div class="teste">Digite um número:</div><input type="text" name="data" id="data" />
+        <input type="submit" name="botao" id="botao" onclick="calculadora()" value="Clique aqui">
+        <input type="submit" name="limpa" id="lima" onclick="limpaDiv()" value="Limpa tabuada">
+        <br><br>
+        <div name="calculos" id="calculos" class="teste"></div>
+    </fieldset>
+
+
+    <script text="javascript">
+        const div = document.getElementById('calculos');
+
+        function calculadora() {
+            let string = '';
+            let valor = document.getElementById("data").value;
+            console.log('O valor digitado no form é: ' + valor);
+            for (let i = 1; i <= 12; i++) {
+                string += `${valor} x ${i} = ${valor * i} <br>`;
+
+                div.innerHTML = string;
+            }
+        }
+
+        function limpaDiv() {
+            div.innerHTML = "";
+        }
+    </script>
+
+</body>
+
+</html>

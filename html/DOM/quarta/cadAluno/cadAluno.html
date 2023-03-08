@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Alunos</title>
+    <link rel="stylesheet" href="style.css">
+    <header>
+        <h1>Centro Universitário de João Pessoa - Unipê</h1>
+    </header>
+</head>
+
+<body>
+    <h2>Cadastro de Alunos</h2>
+    <section>
+        <form id="form-adiciona">
+            <div class="form-group">
+                <label for="nome">Nome do Aluno:</label><br>
+                <input type="text" class="input-form" name="nome" id="nome" placeholder="Digite o nome do aluno">
+            </div>*/
+            <div class="form-group">
+                <label for="nome">Matrícula:</label><br>
+                <input type="text" class="input-form" name="matricula" id="matricula"
+                    placeholder="Digite a matrícula do aluno">
+            </div>
+            <div class="form-group">
+                <label for="nome">N1:</label><br>
+                <input type="text" class="input-form" name="n1" id="n1" placeholder="Digite a primeira nota do aluno">
+            </div>
+            <div class="form-group">
+                <label for="nome">N2:</label><br>
+                <input type="text" class="input-form" name="n2" id="n2" placeholder="Digite a segunda nota do aluno">
+            </div>
+            <div class="form-group">
+                <label for="nome">N3:</label><br>
+                <input type="text" class="input-form" name="n3" id="n3" placeholder="Digite a terceira nota do aluno">
+            </div>
+        </form>
+        <button id="btn-inserir" class="botao" onclick="insereAluno()">Inserir Aluno</button>
+        <button id="btn-limpar" class="botao">Limpar Dados</button>
+    </section>
+    <table class="table">
+        <thead>
+            <tr>
+                <th rowspan="2">Nome</th>
+                <th rowspan="2">Matrícula</th>
+                <th colspan="3" class="centraliza">Notas</th>
+                <th rowspan="2">Média</th>
+                <th rowspan="2"><img class="lixeira" src="trash.png" width="25">
+                </th>
+            </tr>
+            <tr>
+                <th>N1</th>
+                <th>N2</th>
+                <th>N3</th>
+            </tr>
+
+        </thead>
+        <tbody id="table-aluno">
+            <tr>
+                <td scope="row">Vanessa Lima</td>
+                <td class="centraliza">25658</td>
+                <td class="centraliza">10.0</td>
+                <td class="centraliza">9.5</td>
+                <td class="centraliza">8.5</td>
+                <td class="centraliza">9.33</td>
+                <td class="centraliza">
+                    <!-- <a href="#"><img src="img/trash.png" width="15" onclick="excluiAluno()"></a>-->
+                    <button class="btn-trash"><img class="lixeira" src="trash.png" width="15"></button>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script type="module" src="Aluno.js"></script>
+    <script type="module" src="index.js"></script>
+
+</body>
+
+</html>

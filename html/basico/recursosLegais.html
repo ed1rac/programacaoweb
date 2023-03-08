@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset=" UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos Interessantes do HTML5</title>
+    <style>
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+
+        mark {
+            background-color: green;
+            color: #FFFFFF;
+        }
+
+        .conteudo-editavel {
+            border: 1px solid red;
+            padding: 10px, 10px, 10px, 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tag Details</h1>
+    Fornece detalhes sob demanda do usuário
+    <details>
+        <summary>
+            Clique aqui para mais detalhes!
+        </summary>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Profissão</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Edkallenn</td>
+                <td>Lima</td>
+                <td>Professor</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Giuliano</td>
+                <td>Carrazoni</td>
+                <td>Estudante</td>
+            </tr>
+        </table>
+    </details>
+    <hr>
+    <h1>Conteúdos Editáveis</h1>
+    <b>contenteditable</b> é um atributo que pode ser definido em um
+    elemento para tornar o conteúdo daquele elemento <i>editável</i>.
+    <p />
+    Funciona com elementos como DIV, P, UL, OL, etc...
+    <h3>Lista de compras (conteúdo editável)</h3>
+    <ul class="conteudo-editavel" contenteditable="true">
+        <li>Leite Semidesnatado</li>
+        <li>Pão Integral</li>
+        <li>Mel orgânico</li>
+    </ul>
+    <p class="conteudo-editavel" contenteditable="true">Esse conteúdo também é editável!</p>
+    <hr>
+    <h1>Marcação de conteúdo</h1>
+    <p>Você vai usar a tag <b>&lt;mark&gt;</b> para destacar
+        qualquer conteúdo de texto.<br>
+        Por exemplo:
+    </p>
+    <p>Você sabia que pode <mark>"destacar algo interessante"</mark>
+        apenas com uma tag HTML?
+    </p>
+    <hr>
+    <h2>Geolocalização</h2>
+    <button onclick="getLocation()">Clique em mim, por favor!</button>
+    <p id="demo"></p>
+    <div id="mapholder"></div>
+    <script src="https://maps.google.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU"></script>
+    <script>
+        var x = document.getElementById("demo");
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            var lat = position.coords.latitude;
+            var lon = position.coords.longitude;
+            var latlon = new google.maps.LatLng(lat, lon)
+            var mapholder = document.getElementById('mapholder')
+            mapholder.style.height = '250px';
+            mapholder.style.width = '100%';
+
+            var myOptions = {
+                center: latlon,
+                zoom: 14,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                mapTypeControl: false,
+                navigationControlOptions: {
+                    style: google.maps.NavigationControlStyle.SMALL
+                }
+            };
+            var map = new google.maps.Map(document.getElementById("mapholder"), myOptions);
+            var marker = new google.maps.Marker({
+                position: latlon,
+                map: map,
+                title: "VoCê está aqui!"
+            });
+        }
+
+        function showError(error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    x.innerHTML = "User denied the request for Geolocation."
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    x.innerHTML = "Location information is unavailable."
+                    break;
+                case error.TIMEOUT:
+                    x.innerHTML = "The request to get user location timed out."
+                    break;
+                case error.UNKNOWN_ERROR:
+                    x.innerHTML = "An unknown error occurred."
+                    break;
+            }
+        }
+    </script>
+
+
+
+
+    <hr>
+    <h1>Tag Output</h1>
+    A tag `output`representa o resultado de um cálculo. Normalmente, este elemento
+    define uma região que será usada para exibir a saída de texto de alguns
+    cálculos.
+    <p>Por exemplo:</p>
+    <form oninput="x.value=parseInt(a.value)*parseInt(b.value)">
+        <input type="number" id="a" value="0"> <br>
+        * <input type="number" id="b" value="0"><br>
+        = <output name="x" for="a b"></output>
+    </form>
+    <hr>
+    <h1>
+        Datalist
+    </h1>
+    A tag datalist especifica uma lista de opções predefinidas e permite
+    ao usuário adicionar mais opções. É um recuso de preenchimento automáticoque permite
+    obter as opções desejadas com uma digitação antecipada
+    <form action="" method="">
+        <label for="fruta">
+            Escolha sua fruta preferida:
+        </label>
+        <input list="frutas" name="fruta" id="fruta">
+        <datalist id="frutas">
+            <option value="Maçã">
+            <option value="Abacate">
+            <option value="Laranja">
+            <option value="Banana">
+            <option value="Manga">
+        </datalist>
+        <input type="button" value="Clica ni mim!"
+            onclick="console.log(`Foi escolhido ${document.getElementById('fruta').value}`)" </form> <h1>6)
+        Range(Slider)</h1>
+        <p><strong>range</strong> é um tipo de <strong>input </strong>que apresenta um seletor baseado em uma
+            determinada faixa de valores.</p>
+        <h3>Código:</h3>
+
+        <form method="post">
+            <input type="range" name="range" min="0" max="200" step="2" value="" onchange="changeValue(event)" />
+        </form>
+        <div>
+            <h2><output id="output" name="result"> </output></h2>
+        </div>
+
+        <hr>
+
+        <h1>7) Controles de Mídia</h1>
+        <h2>Áudio</h2>
+        <audio controls="controls">
+            <source src="assets/CoolRide.mp3" type="audio/mp3" />
+            Seu navegador não suporta HMTL5
+        </audio>
+
+        <h2>Vídeo</h2>
+        <video controls="controls" height="300">
+            <source src="assets/ana.mp4" />
+            Seu navegador não suporta HMTL5
+        </video>
+
+
+
+
+
+        <script>
+            function changeValue(event) {
+                let value = event.target.value;
+                let output = document.getElementById('output');
+                output.value = value;
+            }
+            /*
+                       var x = document.getElementById("demo");
+
+                               function getLocation() {
+                           if (navigator.geolocation) {
+                               navigator.geolocation.getCurrentPosition(showPosition);
+                           } else {
+                               x.innerHTML = "Geolocation não é suportada pelo seu browser.";
+                           }
+                       }
+
+                       function showPosition(position) {
+                           x.innerHTML = "Latitude: " + position.coords.latitude +
+                               "<br>Longitude: " + position.coords.longitude;
+                       } */
+        </script>
+
+        <!-- Google Tag Manager -->
+        <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    'gtm.start': new Date().getTime(),
+                    event: 'gtm.js'
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-KTCFC3S');
+            var subjectFolder = location.pathname;
+            subjectFolder = subjectFolder.replace("/", "");
+            subjectFolder = subjectFolder.substr(0, subjectFolder.indexOf("/"));
+        </script>
+        <!-- End Google Tag Manager -->
+
+</body>
+
+</html>

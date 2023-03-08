@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Teste de utilização do DOM</title>
+    <style>
+        .form-control {
+            min-width: 100px;
+        }
+
+        .centraliza {
+            text-align: center;
+        }
+
+        .fadeOut {
+            opacity: 0;
+            transition: 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Colégio Unipê - João Pessoa</h1>
+    <h2>Adicionar Aluno</h2>
+    <form id="form-adiciona">
+        <fieldset name="Campo">
+            <div class="form-group">
+                <label for="nome">Nome do Aluno:</label>
+                <input style="width: 80%;" type="text" class="form-control" name="nome" id="nome"
+                    aria-describedby="helpId" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="mat">Matrícula:</label>
+                <input style="width: 80%;" type="text" class="form-control" name="mat" id="mat"
+                    aria-describedby="helpId" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="nota1">N1:</label>
+                <input style="width: 80%;" type="text" class="form-control" name="nota1" id="nota1"
+                    aria-describedby="helpId" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="nota2">N2:</label>
+                <input style="width: 80%;" type="text" class="form-control" name="nota2" id="nota2"
+                    aria-describedby="helpId" placeholder="">
+            </div>
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="nota3">N3:</label>
+                    <input style="width: 80%;" type="text" name="nota3" id="nota3" class="form-control" placeholder=""
+                        aria-describedby="helpId">
+                </div>
+            </form>
+            <input name="" id="bt-inserirAluno" class="btn btn-primary" type="button" value="Inserir"
+                onclick="insereAluno()">
+            <input name="" id="bt-limpaForm" class="btn btn-primary" type="button" value="Limpar" onclick="limpaForm()">
+        </fieldset>
+    </form>
+    <hr>
+    <h3>Alunos:</h3>
+    <table class="table" style="width: 90%; padding: 10 10;" onload="exclui()">
+        <thead>
+            <tr>
+                <th rowspan=" 2">Nome</th>
+                <th rowspan="2">Matrícula</th>
+                <th colspan="3" class="centraliza">Notas</th>
+                <th rowspan="2" style="text-align: center; vertical-align: middle;"><img src="img/trash.png" width="25">
+                </th>
+            </tr>
+            <tr>
+                <th>N1</th>
+                <th>N2</th>
+                <th>N3</th>
+            </tr>
+            <tr>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody id="table-aluno">
+            <tr>
+                <td scope=" row">Vanessa Lima</td>
+                <td>25658</td>
+                <td>10.0</td>
+                <td>9.5</td>
+                <td>8.5</td>
+                <td class="centraliza">
+                    <!-- <a href="#"><img src="img/trash.png" width="15" onclick="excluiAluno()"></a>-->
+                    <button class="btn btn-info"><img class="lixeira" src="img/trash.png" width="15"></button>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+    <script src="./js/funcoes.js"></script>
+    <script src="./js/exclui.js"></script>
+
+</body>
+
+</html>

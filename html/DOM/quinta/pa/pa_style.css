@@ -1,0 +1,36 @@
+button {
+    color: blue;
+    background-color: antiquewhite;
+    padding: 5pt;
+}
+
+button:hover {
+    color: black;
+    background-color: white;
+}
+
+.par1 {
+    font-family: Roboto, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: normal;
+    text-decoration: inherit;
+}
+
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    text-shadow: 1.5pt 1.5pt gray;
+}
+
+.form-field {
+    font-family: Roboto, Helvetica, sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    color: (0, 0, 0, 0.87);
+    align-items: center;
+    display: inline-flex;
+    vertical-align: middle;
+}

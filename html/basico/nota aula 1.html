@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Notas de aula - Programação Web - Aula 1 - Prof. Ed.</title>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+	<style>
+		/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+		/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+		body {
+			font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+			font-size: var(--vscode-markdown-font-size, 14px);
+			padding: 0 26px;
+			line-height: var(--vscode-markdown-line-height, 22px);
+			word-wrap: break-word;
+		}
+
+		#code-csp-warning {
+			position: fixed;
+			top: 0;
+			right: 0;
+			color: white;
+			margin: 16px;
+			text-align: center;
+			font-size: 12px;
+			font-family: sans-serif;
+			background-color: #444444;
+			cursor: pointer;
+			padding: 6px;
+			box-shadow: 1px 1px 1px rgba(0, 0, 0, .25);
+		}
+
+		#code-csp-warning:hover {
+			text-decoration: none;
+			background-color: #007acc;
+			box-shadow: 2px 2px 2px rgba(0, 0, 0, .25);
+		}
+
+		body.scrollBeyondLastLine {
+			margin-bottom: calc(100vh - 22px);
+		}
+
+		body.showEditorSelection .code-line {
+			position: relative;
+		}
+
+		body.showEditorSelection .code-active-line:before,
+		body.showEditorSelection .code-line:hover:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: -12px;
+			height: 100%;
+		}
+
+		body.showEditorSelection li.code-active-line:before,
+		body.showEditorSelection li.code-line:hover:before {
+			left: -30px;
+		}
+
+		.vscode-light.showEditorSelection .code-active-line:before {
+			border-left: 3px solid rgba(0, 0, 0, 0.15);
+		}
+
+		.vscode-light.showEditorSelection .code-line:hover:before {
+			border-left: 3px solid rgba(0, 0, 0, 0.40);
+		}
+
+		.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+			border-left: none;
+		}
+
+		.vscode-dark.showEditorSelection .code-active-line:before {
+			border-left: 3px solid rgba(255, 255, 255, 0.4);
+		}
+
+		.vscode-dark.showEditorSelection .code-line:hover:before {
+			border-left: 3px solid rgba(255, 255, 255, 0.60);
+		}
+
+		.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+			border-left: none;
+		}
+
+		.vscode-high-contrast.showEditorSelection .code-active-line:before {
+			border-left: 3px solid rgba(255, 160, 0, 0.7);
+		}
+
+		.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+			border-left: 3px solid rgba(255, 160, 0, 1);
+		}
+
+		.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+			border-left: none;
+		}
+
+		img {
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		a:focus,
+		input:focus,
+		select:focus,
+		textarea:focus {
+			outline: 1px solid -webkit-focus-ring-color;
+			outline-offset: -1px;
+		}
+
+		hr {
+			border: 0;
+			height: 2px;
+			border-bottom: 2px solid;
+		}
+
+		h1 {
+			padding-bottom: 0.3em;
+			line-height: 1.2;
+			border-bottom-width: 1px;
+			border-bottom-style: solid;
+		}
+
+		h1,
+		h2,
+		h3 {
+			font-weight: normal;
+		}
+
+		table {
+			border-collapse: collapse;
+		}
+
+		table>thead>tr>th {
+			text-align: left;
+			border-bottom: 1px solid;
+		}
+
+		table>thead>tr>th,
+		table>thead>tr>td,
+		table>tbody>tr>th,
+		table>tbody>tr>td {
+			padding: 5px 10px;
+		}
+
+		table>tbody>tr+tr>td {
+			border-top: 1px solid;
+		}
+
+		blockquote {
+			margin: 0 7px 0 5px;
+			padding: 0 16px 0 10px;
+			border-left-width: 5px;
+			border-left-style: solid;
+		}
+
+		code {
+			font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+			font-size: 1em;
+			line-height: 1.357em;
+		}
+
+		body.wordWrap pre {
+			white-space: pre-wrap;
+		}
+
+		pre:not(.hljs),
+		pre.hljs code>div {
+			padding: 16px;
+			border-radius: 3px;
+			overflow: auto;
+		}
+
+		pre code {
+			color: var(--vscode-editor-foreground);
+			tab-size: 4;
+		}
+
+		/** Theming */
+
+		.vscode-light pre {
+			background-color: rgba(220, 220, 220, 0.4);
+		}
+
+		.vscode-dark pre {
+			background-color: rgba(10, 10, 10, 0.4);
+		}
+
+		.vscode-high-contrast pre {
+			background-color: rgb(0, 0, 0);
+		}
+
+		.vscode-high-contrast h1 {
+			border-color: rgb(0, 0, 0);
+		}
+
+		.vscode-light table>thead>tr>th {
+			border-color: rgba(0, 0, 0, 0.69);
+		}
+
+		.vscode-dark table>thead>tr>th {
+			border-color: rgba(255, 255, 255, 0.69);
+		}
+
+		.vscode-light h1,
+		.vscode-light hr,
+		.vscode-light table>tbody>tr+tr>td {
+			border-color: rgba(0, 0, 0, 0.18);
+		}
+
+		.vscode-dark h1,
+		.vscode-dark hr,
+		.vscode-dark table>tbody>tr+tr>td {
+			border-color: rgba(255, 255, 255, 0.18);
+		}
+	</style>
+
+	<style>
+		/* Tomorrow Theme */
+		/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+		/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+		/* Tomorrow Comment */
+		.hljs-comment,
+		.hljs-quote {
+			color: #8e908c;
+		}
+
+		/* Tomorrow Red */
+		.hljs-variable,
+		.hljs-template-variable,
+		.hljs-tag,
+		.hljs-name,
+		.hljs-selector-id,
+		.hljs-selector-class,
+		.hljs-regexp,
+		.hljs-deletion {
+			color: #c82829;
+		}
+
+		/* Tomorrow Orange */
+		.hljs-number,
+		.hljs-built_in,
+		.hljs-builtin-name,
+		.hljs-literal,
+		.hljs-type,
+		.hljs-params,
+		.hljs-meta,
+		.hljs-link {
+			color: #f5871f;
+		}
+
+		/* Tomorrow Yellow */
+		.hljs-attribute {
+			color: #eab700;
+		}
+
+		/* Tomorrow Green */
+		.hljs-string,
+		.hljs-symbol,
+		.hljs-bullet,
+		.hljs-addition {
+			color: #718c00;
+		}
+
+		/* Tomorrow Blue */
+		.hljs-title,
+		.hljs-section {
+			color: #4271ae;
+		}
+
+		/* Tomorrow Purple */
+		.hljs-keyword,
+		.hljs-selector-tag {
+			color: #8959a8;
+		}
+
+		.hljs {
+			display: block;
+			overflow-x: auto;
+			color: #4d4d4c;
+			padding: 0.5em;
+		}
+
+		.hljs-emphasis {
+			font-style: italic;
+		}
+
+		.hljs-strong {
+			font-weight: bold;
+		}
+	</style>
+
+	<style>
+		/*
+ * Markdown PDF CSS
+ */
+
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+			padding: 0 12px;
+		}
+
+		pre {
+			background-color: #f8f8f8;
+			border: 1px solid #cccccc;
+			border-radius: 3px;
+			overflow-x: auto;
+			white-space: pre-wrap;
+			overflow-wrap: break-word;
+		}
+
+		pre:not(.hljs) {
+			padding: 23px;
+			line-height: 19px;
+		}
+
+		blockquote {
+			background: rgba(127, 127, 127, 0.1);
+			border-color: rgba(0, 122, 204, 0.5);
+		}
+
+		.emoji {
+			height: 1.4em;
+		}
+
+		code {
+			font-size: 14px;
+			line-height: 19px;
+		}
+
+		/* for inline code */
+		:not(pre):not(.hljs)>code {
+			color: #C9AE75;
+			/* Change the old color so it seems less like an error */
+			font-size: inherit;
+		}
+
+		/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+		.page {
+			page-break-after: always;
+		}
+	</style>
+
+	<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+
+<body>
+	<script>
+		mermaid.initialize({
+			startOnLoad: true,
+			theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains(
+					'vscode-high-contrast') ?
+				'dark' :
+				'default'
+		});
+	</script>
+	<h1 id="notas-da-aula-1---html-e-principais-tags">Notas da aula 1 - HTML e principais tags</h1>
+	<h2 id="protocolo-http">Protocolo HTTP</h2>
+	<ul>
+		<li><strong>Protocolo</strong> é o conjunto de regras sobre o modo como se dará a comunicação entre as partes
+			envolvidas.</li>
+		<li>O Hypertext Transfer Protocol, sigla <strong>HTTP</strong> (em português <strong>Protocolo</strong> de
+			Transferência de Hipertexto) é um <strong>protocolo</strong> de comunicação utilizado para sistemas de
+			informação de hipermídia, distribuídos e colaborativos. Ele é a base para a comunicação de dados da World
+			Wide Web.</li>
+	</ul>
+	<h1 id="introdu%C3%A7%C3%A3o-ao-html">Introdução ao HTML</h1>
+	<ul>
+		<li>
+			<p>Entre todos os recursos envolvidos e necessários para criar uma aplicação web, o HTML é sem dúvida o mais
+				importante.</p>
+		</li>
+		<li>
+			<p>A essência de qualquer página web começa no HTML</p>
+		</li>
+		<li>
+			<p>O HTML irá informar ao navegador o que cada elemento dentro da página representa, e sem ele não é
+				possível saber o que cada coisa é em uma página web.</p>
+		</li>
+	</ul>
+	<h2 id="html">HTML</h2>
+	<ul>
+		<li>
+			<p>Desenvolvida em 1989 por Tim Berners-Lee e seus colaboradores no CERN (Conselho Europeu de Pesquisas
+				Nucleares)</p>
+		</li>
+		<li>
+			<p>Manter os documentos Organizados</p>
+		</li>
+		<li>
+			<p>Em 1990 foi definida em especificações formais;</p>
+		</li>
+		<li>
+			<p>Em 2000 a linguagem tornou-se uma norma internacional</p>
+		</li>
+		<li>
+			<p>Versão Atual HTML5</p>
+		</li>
+		<li>
+			<p>É uma linguagem de marcação utilizada na construção de páginas na Web.</p>
+		</li>
+		<li>
+			<p>Documentos HTML podem ser interpretados por browsers</p>
+		</li>
+		<li>
+			<p>Todo documento HTML possui marcadores (do inglês: <em>tags</em>), palavras entre parênteses angulares
+				(chevron)(&lt; e &gt;)</p>
+		</li>
+		<li>
+			<p>Esses marcadores são os comandos de formatação da linguagem.</p>
+		</li>
+		<li>
+			<p>Um elemento é formado por um nome de marcador (<em>tag</em>), atributos, valores e filhos (que podem ser
+				outros elementos ou texto)</p>
+		</li>
+	</ul>
+	<h3 id="o-que-pode-conter">O que pode conter?</h3>
+	<ul>
+		<li>
+			<p>Texto, imagens, Figuras, Folhas de Estilos, Cores...</p>
+		</li>
+		<li>
+			<p>Quem padroniza tudo isso?</p>
+		</li>
+		<li>
+			<p>W3C (World Wide Web Consortium)</p>
+		</li>
+		<li>
+			<p>Estabelece compatibilidade das informações na Internet</p>
+		</li>
+	</ul>
+	<blockquote>
+		<p>É uma linguagem de marcação de hipertexto
+			<strong>Não é</strong> uma linguagem de programação</p>
+	</blockquote>
+	<ul>
+		<li>É uma linguagem de <strong>marcação</strong>!</li>
+	</ul>
+	<h2 id="evolu%C3%A7%C3%A3o-da-html">Evolução da HTML</h2>
+	<ul>
+		<li>
+			<p>Desde a invenção da web, a HTML evoluiu por oito versões que são:</p>
+		</li>
+		<li>
+			<p>HTML</p>
+		</li>
+		<li>
+			<p>HTML +</p>
+		</li>
+		<li>
+			<p>HTML 2.0</p>
+		</li>
+		<li>
+			<p>HTML 3.0</p>
+		</li>
+		<li>
+			<p>HTML 3.2</p>
+		</li>
+		<li>
+			<p>HTML 4.0</p>
+		</li>
+		<li>
+			<p>HTML 4.01</p>
+		</li>
+		<li>
+			<p>HTML 5</p>
+		</li>
+	</ul>
+	<h2 id="tecnologias-web">Tecnologias Web</h2>
+	<h3 id="html">HTML</h3>
+	<ul>
+		<li>Estruturar o conteúdo do documento</li>
+	</ul>
+	<h3 id="css">CSS</h3>
+	<ul>
+		<li>Uma <em>linguagem de folhas de estilos</em>. Isso quer dizer que o CSS
+			permite que você aplique estilos seletivamente a elementos em documentos
+			HTML.</li>
+	</ul>
+	<h3 id="javascript">Javascript</h3>
+	<ul>
+		<li>
+			<p>Fornece interação e lógica à página web</p>
+		</li>
+		<li>
+			<p>Serve para manipular o comportamento da página</p>
+		</li>
+	</ul>
+	<h2 id="estrutura">Estrutura</h2>
+	<pre class="hljs"><code><div><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+	<h2 id="cabe%C3%A7alhos">Cabeçalhos</h2>
+	<p>Headings (Cabeçalhos)</p>
+	<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Do mais importante<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h5</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">h6</span>&gt;</span>para o menos importante<span class="hljs-tag">&lt;/<span class="hljs-name">h6</span>&gt;</span>
+
+</div></code></pre>
+	<h2 id="par%C3%A1grafo">Parágrafo</h2>
+	<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+	<h2 id="encode-charset">Encode (Charset)</h2>
+	<ul>
+		<li>URL encoding converte caracteres em um formato que pode ser transmitido pela internet.</li>
+	</ul>
+	<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
+</div></code></pre>
+	<h2 id="criando-o-1%C2%AA-documento-html">Criando o 1ª documento HTML</h2>
+	<ul>
+		<li>
+			<p>Digite o exemplo mostrado pelo professor em um editor de texto simples, como o notepad, gedit, Notepad++,
+				Sublime;</p>
+		</li>
+		<li>
+			<p>Salve o arquivo com a extensão <code>.html</code></p>
+		</li>
+	</ul>
+	<h2 id="negrito">Negrito</h2>
+	<pre class="hljs"><code><div><span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>
+</div></code></pre>
+	<ul>
+		<li>Colocando as palavras entre as tags <code>&lt;b&gt;&lt;/b&gt;</code> podemos exibir os caracteres em
+			<strong>negrito</strong>.</li>
+	</ul>
+	<h2 id="it%C3%A1lico">Itálico</h2>
+	<ul>
+		<li>
+			<p><code>&lt;i&gt;</code></p>
+		</li>
+		<li>
+			<p>Colocando as palavras entre as tags <code>&lt;i&gt;&lt;/i&gt;</code> podemos exibir os caracteres em
+				itálico.</p>
+		</li>
+	</ul>
+	<h2 id="quebras-de-linhas">Quebras de Linhas</h2>
+	<ul>
+		<li>
+			<p><code>&lt;br&gt;</code></p>
+		</li>
+		<li>
+			<p>Como já foi visto, o navegador exibirá automaticamente cada novo paragrafo ou título em uma nova linha.
+				Mas se quiser adicionar uma nova quebra de linha no meio de um paragrafo?</p>
+		</li>
+	</ul>
+	<h2 id="linhas-horizontais">Linhas Horizontais</h2>
+	<ul>
+		<li>
+			<p><code>&lt;hr&gt;</code></p>
+		</li>
+		<li>
+			<p>Serve para criar uma quebra de linha entre os temas -- como uma alteração no tema em um livro ou uma nova
+				cena em uma peça.</p>
+		</li>
+	</ul>
+	<h2 id="listas">Listas</h2>
+	<p>Há muitas ocasiões em que precisamos usar listas. A HTML nos fornece três tipos diferentes.</p>
+	<ul>
+		<li>
+			<p><strong>Listas</strong> <strong>Ordenadas</strong>: são listas onde cada item da lista é numerado. Ex:
+				Conjuntos de passos para uma receita.</p>
+		</li>
+		<li>
+			<p><strong>Listas</strong> <strong>não</strong> <strong>Ordenadas</strong>: são listas que começam com um
+				marcador (em vez de caracteres que indiquem ordem).</p>
+		</li>
+	</ul>
+	<h3 id="listas-ordenadas">Listas Ordenadas</h3>
+	<ul>
+		<li>
+			<p><code>&lt;ol&gt;</code> - A lista ordenada é criada com o elemento <code>&lt;ol&gt;</code></p>
+		</li>
+		<li>
+			<p><code>&lt;li&gt;</code> - Cada item da lista é colocado entre uma tag de abertura <code>&lt;li&gt;</code>
+				e uma tag de fechamento <code>&lt;/li&gt;</code> (li significa item da lista).</p>
+		</li>
+		<li>
+			<p>Utilizando o atributo <code>type=&quot;&quot;</code> na tag <code>&lt;ol&gt;&lt;/ol&gt;</code> é possível
+				indicar o tipo de ordenação. Assim:</p>
+		</li>
+		<li>
+			<p><code>type=&quot;1&quot;</code> -- Lista com ordenação numérica</p>
+		</li>
+		<li>
+			<p><code>type=&quot;A&quot;</code> -- Lista com ordenação alfabética Maiúscula</p>
+		</li>
+		<li>
+			<p><code>type=&quot;a&quot;</code> - Lista com ordenação alfabética Minúscula</p>
+		</li>
+		<li>
+			<p><code>type=&quot;I&quot;</code> -- Lista com ordenação Romana Maiúscula</p>
+		</li>
+		<li>
+			<p><code>type=&quot;i&quot;</code> - Lista com ordenação Romana Minúscula</p>
+		</li>
+	</ul>
+	<h3 id="listas-n%C3%A3o-ordenadas">Listas não Ordenadas</h3>
+	<ul>
+		<li>
+			<p><code>&lt;ul&gt;</code>- A lista não ordenada é criada com o elemento <code>&lt;/ul&gt;</code></p>
+		</li>
+		<li>
+			<p><code>&lt;li&gt;</code>- Cada item da lista é colocado entre uma tag de abertura <code>&lt;li&gt;</code>
+				e uma tag de fechamento <code>&lt;/li&gt;</code> (li significa item da lista).</p>
+		</li>
+	</ul>
+	<h2 id="links">Links</h2>
+	<h2 id="criando-links">Criando Links</h2>
+	<ul>
+		<li>
+			<p>Links são a característica definidora da Web, porque permitem pular de uma página web para outra --
+				possibilitando a própria ideia de navegar ou surfar na internet.</p>
+		</li>
+		<li>
+			<p>Os tipos mais comuns de links:</p>
+			<ul>
+				<li>Links de um site para outro</li>
+				<li>Links de uma página para outra no mesmo site</li>
+				<li>Links de uma parte da página web para outra parte da mesma página.</li>
+				<li>Links que abrem uma nova página do navegador</li>
+				<li>Links que iniciam o programa de e-mail e endereços um novo e-mail para alguém</li>
+			</ul>
+		</li>
+		<li>
+			<p>Links são Criados usado o elemento <code>&lt;a&gt;</code></p>
+		</li>
+		<li>
+			<p>Os usuários podem clicar qualquer coisa entre a tag de abertura <code>&lt;a&gt;</code> e a tag de
+				fechamento <code>&lt;/a&gt;</code>.</p>
+		</li>
+		<li>
+			<p>Você especifica a página de destino do link utilizando o atributo <code>href</code>.</p>
+		</li>
+	</ul>
+	<h2 id="formul%C3%A1rios">Formulários</h2>
+	<ul>
+		<li>
+			<p>Locais onde o usuário possa interagir com a página e enviar informações para serem processadas.</p>
+		</li>
+		<li>
+			<p>Exemplo:</p>
+			<ul>
+				<li>
+					<p>Formulário de Cadastro</p>
+				</li>
+				<li>
+					<p>Formulário de Login</p>
+				</li>
+				<li>
+					<p>Campo de Pesquisa</p>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<p>Um formulário HTML é feito de um ou mais <code>widgets</code>.</p>
+		</li>
+		<li>
+			<p>Esses widgets podem ser <strong>campos de texto</strong> (linha única ou de várias
+				linhas), <strong>caixas de seleção</strong>, <strong>botões</strong>, <strong>checkboxes</strong> ou
+				<strong>radio buttons</strong>.</p>
+		</li>
+		<li>
+			<p>Na maior parte do tempo, estes elementos possuem uma legenda que
+				descreve o seu objetivo.</p>
+		</li>
+	</ul>
+	<h2 id="formul%C3%A1rios">Formulários</h2>
+	<h3 id="tag-form">Tag <code>&lt;form&gt;</code></h3>
+	<ul>
+		<li>A tag <code>&lt;form&gt;</code> não apresenta uma referência visual quando criada, mas representa
+			semanticamente um formulário.</li>
+	</ul>
+	<h2 id="atributos">Atributos</h2>
+	<ul>
+		<li>
+			<p>Atributos da tag <code>&lt;form&gt;</code>:</p>
+			<ul>
+				<li>
+					<p><code>autocomplete=&quot;on\|off&quot;</code> - A medida em que usamos os campos de um formulário
+						o navegador irá começar a sugerir valores para o que estamos digitando, com base em valores que
+						foram digitados anteriormente.</p>
+				</li>
+				<li>
+					<p><code>action=&quot;string&quot;</code> - Este atributo especifica para onde os dados do
+						formulário serão enviados. Normalmente será o link de uma página no servidor:</p>
+				</li>
+				<li>
+					<p><code>method=&quot;get\|post&quot;</code> - Especifica o método do HTTP que será utilizado para a
+						submissão (get ou post):</p>
+				</li>
+				<li>
+					<p><code>novalidate</code> - Impede a validação dos campos antes da submissão</p>
+				</li>
+				<li>
+					<p><code>target=&quot;_blank\|self&quot;</code> - Assim como na tag <code>&lt;a&gt;</code>, o target
+						indica onde a página de destino será aberta.</p>
+				</li>
+				<li>
+					<p><code>target=&quot;_blank&quot;</code> serve para abrir um link em uma nova aba do
+						navegador.</p>
+				</li>
+			</ul>
+		</li>
+	</ul>
+	<h2 id="elementos">Elementos</h2>
+	<ul>
+		<li>
+			<p>Elementos (Widgets) que podem ser utilizados no formulário:</p>
+		</li>
+		<li>
+			<p>Os formulários possuem campos onde inserimos dados.</p>
+		</li>
+		<li>
+			<p>Os campos mais comuns dos formulários são criados pela tag <code>&lt;input&gt;</code>, que tem o atributo
+				type onde indicamos o tipo de campo que queremos.</p>
+		</li>
+	</ul>
+	<h2 id="elementos">Elementos</h2>
+	<ul>
+		<li>
+			<p><strong>Inputs de Texto</strong></p>
+		</li>
+		<li>
+			<p>Para escrever um pequeno texto é utilizado a tag <code>&lt;input&gt;</code> (auto close)</p>
+		</li>
+	</ul>
+	<h3 id="atributos-basicos-tag-input"><strong>Atributos basicos tag</strong> <code>&lt;input&gt;</code></h3>
+	<h4 id="type-%22text%22-valor-padr%C3%A3o-%C3%A9-o-text">type =&quot;text&quot; (valor padrão é o text)</h4>
+	<ul>
+		<li>
+			<p><code>placeholder</code> - texto que aparece quando o campo está vazio;</p>
+		</li>
+		<li>
+			<p><code>maxlength</code> - quantidade máxima de caracteres</p>
+		</li>
+		<li>
+			<p><code>required</code> - indica que o campo é necessário, não permitindo submeter o formulário se o campo
+				estiver em branco;</p>
+		</li>
+		<li>
+			<p><code>disabled</code> - deixa o campo desabilitado;</p>
+		</li>
+		<li>
+			<p><code>readonly</code> - impede edições no campo, permitindo apenas que o usuário leia o valor.</p>
+		</li>
+	</ul>
+	<h2 id="elementos">Elementos</h2>
+	<ul>
+		<li>
+			<p><strong>Email, Search e URL</strong></p>
+			<ul>
+				<li>
+					<p>Esses tipos são parecidos com o tipo &quot;text&quot;</p>
+				</li>
+				<li>
+					<p>Teclados de tablets e smartphones se adaptam a cada tipo de input</p>
+				</li>
+				<li>
+					<p>Tipos como <strong>email</strong> e <strong>url</strong> possuem validação</p>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<p><strong>Exemplos</strong></p>
+		</li>
+		<li>
+			<p>Validação Email e URL (ver na aula)</p>
+		</li>
+	</ul>
+	<h3 id="number"><strong>Number</strong></h3>
+	<ul>
+		<li>
+			<p>Indica um campo do tipo <code>number</code>.</p>
+		</li>
+		<li>
+			<p>Em computadores o campo fica com botões para aumentar e diminuir o número.</p>
+		</li>
+		<li>
+			<p>Em dispositivos com teclado virtual é exibido um teclado numérico.</p>
+		</li>
+	</ul>
+	<h3 id="elemento-radio-button">Elemento <strong>Radio Button</strong></h3>
+	<ul>
+		<li>
+			<p>Cria um Radio Button, onde podemos selecionar apenas uma opção. Para obter a seleção exclusiva é
+				necessário colocar o mesmo atributo &quot;name&quot;.</p>
+		</li>
+		<li>
+			<p>Isso faz com que o navegador entenda que ambos pertencem ao mesmo campo.</p>
+		</li>
+		<li>
+			<p>Se passarmos nomes diferentes poderíamos selecionar os dois valores, o que não é o objetivo dos Radio
+				Buttons.</p>
+		</li>
+	</ul>
+	<h4 id="atributos-basicos-tag-input-type%22radio%22"><strong>Atributos basicos tag</strong> <code>&lt;input
+			type=&quot;radio&quot;/&gt;</code></h4>
+	<ul>
+		<li>checked=&quot;checked&quot; - Seleciona um elemento no checkbox</li>
+	</ul>
+	<h3 id="elemento-checkbox">Elemento <strong>Checkbox</strong></h3>
+	<ul>
+		<li>Diferente do Radio Button, onde só é possível selecionar uma opção, o
+			CheckBox serve para selecionarmos mais de uma opção.</li>
+	</ul>
+	<h3 id="elemento-date-time-e-datetime-local">Elemento <strong>Date, Time e Datetime-local</strong></h3>
+	<ul>
+		<li><strong>Datetime-local</strong> - Serve para selecionar o tempo (horas, minutos).</li>
+	</ul>
+	<h3 id="elemento-button-reset-e-submit">Elemento <strong>Button, reset e submit</strong></h3>
+	<ul>
+		<li>
+			<p>Esses tipos criam um botão.</p>
+		</li>
+		<li>
+			<p>O tipo <code>&quot;submit&quot;</code> é usado para que o usuário clique quando quiser enviar o
+				formulário.</p>
+		</li>
+		<li>
+			<p>O tipo <code>&quot;reset&quot;</code> serve para quando o usuário quiser reiniciar o formulário. Cuidado,
+				pois ao clicar o formulário inteiro será apagado!</p>
+		</li>
+	</ul>
+	<h3 id="elemento-select">Elemento <strong>Select</strong></h3>
+	<ul>
+		<li>A tag <code>&lt;select&gt;</code> nos permite criar uma lista onde podemos selecionar um item. Cada uma das
+			opções é criada pela tag <code>&lt;option&gt;</code>.</li>
+		<li>O atributo &quot;value&quot; da tag option é o valor a ser enviado ao servidor, e o valor escrito dentro da
+			tag é o que será exibido ao usuário.</li>
+	</ul>
+	<h4 id="atributos-basicos-tag-select"><strong>Atributos basicos tag</strong> <code>&lt;select&gt;</code></h4>
+	<ul>
+		<li><code>selected</code> - Seleciona um elemento no select</li>
+	</ul>
+	<h3 id="elemento-fieldset-e-legend">Elemento <strong>Fieldset e Legend</strong></h3>
+	<ul>
+		<li>
+			<p>Serve para criarmos um campo dentro do formulário para poder melhor organizar os campos.</p>
+		</li>
+		<li>
+			<p>A tag <code>&lt;legend&gt;</code> serve para darmos um título à seção.</p>
+		</li>
+	</ul>
+	<h3 id="elemento-label">Elemento <strong>Label</strong></h3>
+	<ul>
+		<li>
+			<p>Esta tag serve para darmos nomes aos campos. Se passarmos o id do input no atributo &quot;for&quot;,
+				estaremos indicando ao navegador que o Label é referente àquele campo.</p>
+		</li>
+		<li>
+			<p>Quando o usuário clicar no texto do Label, o input receberá foco, permitindo que o usuário já entre com
+				os dados.</p>
+		</li>
+	</ul>
+	<h4 id="d%C3%BAvidas">Dúvidas</h4>
+	<p><strong>E-mail</strong>: edkallennl@unipe.edu.br</p>
+
+</body>
+
+</html>

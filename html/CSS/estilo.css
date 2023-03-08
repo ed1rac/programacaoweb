@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,700&family=Ubuntu:wght@300&display=swap');
+
+h2,
+h3 {
+    color: pink;
+    background-color: black;
+}
+
+#bobagem {
+    font-family: fantasy;
+    font-stretch: ultra-condensed;
+    font-style: italic;
+}
+
+.titulo1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: yellow;
+    margin: 1pc;
+    background-color: green;
+    font-stretch: condensed;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px #000000;
+    text-align: center;
+    text-decoration: line-through;
+    border-radius: 30px;
+    border: 1px solid black;
+}
+
+a {
+    text-decoration: none;
+    color: green;
+}
+
+a:hover {
+    color: rgba(129, 176, 216, 0.8);
+    background-color: darkblue;
+    font-weight: bolder;
+    font-style: oblique;
+    font-size: larger;
+}
+
+li {
+    margin: 5px;
+}
+
+p:hover {
+    color: red;
+}
+
+div {
+    background-color: rgb(95, 164, 102);
+    color: white;
+    border: 1pt dotted black;
+    padding: 10px;
+    display: inline-block;
+    width: calc((100%/3)-2px);
+}
+
+body {
+    font-family: Roboto, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

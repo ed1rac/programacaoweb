@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset=" UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste das outras tags</title>
+</head>
+
+<body>
+    <h1>Este é um título 1</h1>
+    <p>Este é um parágrafo</p> Fora do parágrafo <br />
+    Aqui é outra coisa. Bem diferente. <br>
+    <i>Agora é itálico!</i> E tem também <b>negrito</b>.<br>
+    Ou podemos usar o <strong>strong</strong>.
+    <hr />
+    <figure>
+        <img src="https://t2.tudocdn.net/636634?w=1000&fit=clip" height="300" alt="Foto linda">
+        <figcaption>Imagem em Infravermelho de Júpiter</figcaption>
+    </figure>
+    <h2>Lista Ordenada</h2>
+    <ol type="i">
+        <li>Por exemplo</li>
+        <li>Sem exemplo</li>
+        <li>Criativo sem criatividade</li>
+    </ol>
+    <h2> Listas Não-ordenadas</h2>
+    <ul>
+        <li>Aqui é tudo desordenado</li>
+        <li>Que coisa legal!</li>
+        <li>Mas, é interessante também</li>
+    </ul>
+    <h2>Tópicos sobre arquitetura de computadores</h2>
+    <ul>
+        <a href="https://pt.wikipedia.org/wiki/Arquitetura_ARM">
+            <li>Arquitetura ARM</li>
+        </a>
+        <a href="https://pt.wikipedia.org/wiki/RISC">
+            <li>RISC</li>
+        </a>
+        <a href="https://pt.wikipedia.org/wiki/CISC">
+            <li>CISC</li>
+        </a>
+    </ul>
+    <h2>Formulários</h2>
+    <form action="">
+        Nome:
+        <input type="text" name="nome" placeholder="Digite seu nome" />
+        <br>Email:
+        <input type="email" placeholder="digite o email" />
+        <br> Procure:
+        <input type="search" />
+        <br>URL:
+        <input type="url" />
+        <br>Digite sua idade: <input type="number" />
+        <br> Escolha seu videogame antigo preferido: <br>
+        <input type="radio" name="videogame" checked /> SNES <br>
+        <input type="radio" name="videogame" /> Mega Drive <br>
+        <input type="radio" name="videogame" /> PS1 <br>
+        <input type="radio" name="videogame" /> Atari <br>
+
+        <br> Qual videogame você possuiu: <br>
+        <input type="checkbox" name="console" checked /> SNES <br>
+        <input type="checkbox" name="console" /> Mega Drive <br>
+        <input type="checkbox" name="console" /> PS1 <br>
+        <input type="checkbox" name="console" /> Atari <br>
+
+        <br>
+        Que dia você nasceu?
+        <input type="datetime-local" name="data-nascimento" /><br>
+
+
+        <input type="button" name="Botão Normal" value="Sei lá" onclick="olaMundo();" />
+        <input type="submit" name="Submeta-me!" value="Sei lá2" />
+        <input type="reset" name="Seila" value="LIMPA" /><br>
+
+        <label for="cars">Escolha um carro</label> <br>
+        <select name="cars" id="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+        </select>
+
+
+    </form>
+
+    <script>
+        function olaMundo() {
+            console.log('Olá, mundo!');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="funcoes.js"></script>
+    <title>Exemplo de CSS</title>
+    <style type="text/css">
+        .titulo {
+            font-size: 3rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #333;
+            text-align: center;
+        }
+
+        .titulo2 {
+            font-size: 2rem;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #333;
+            text-align: center;
+        }
+
+        #botao-bonito {
+            color: white;
+            font: bolder;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-right: 35px;
+            padding-left: 35px;
+            background-color: green;
+            text-decoration: none;
+            /* text-decoration: none é Para mudar o comportamento da tag a */
+        }
+
+        #botao-bonito:hover {
+            color: rgb(235, 249, 42);
+            background-color: grey;
+            border-color: black;
+            border-style: solid;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="titulo">Site de teste de CSS</h1>
+    <a id="botao-bonito" href="#" onclick="clicouBotao()">Clique nesse botão</a>
+    <br>
+    <div id="frame" class="titulo2"></div>
+
+</body>
+
+</html>

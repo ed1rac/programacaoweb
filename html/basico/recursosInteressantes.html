@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos interessantes do HTML 5</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10pt;
+        }
+
+        .conteudo-editavel {
+            border: 1px solid red;
+            padding: 10px, 10px, 10px, 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>1. Tag details</h1>
+    A tag
+    <strong>&lt;details&gt;</strong> fornece detalhes sob demanda ao usuário. Se você precisar mostrar conteúdo ao
+    usuário sob demanda, use esta tag. Por padrão, o widget está fechado. Quando aberto, ele se expande e exibe o
+    conteúdo interno.
+    A tag <strong>&lt;summary&gt;</strong> é usada com <strong>&lt;details&gt;</strong> para especificar um título
+    visível para ela.
+    <p>
+        Assim:
+    </p>
+    <details>
+        <summary>Clique aqui para ver mais detalhes</summary>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Localização</th>
+                <th>Trabalho</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Edkallenn</td>
+                <td>Lima</td>
+                <td>Professor</td>
+            </tr>
+        </table>
+    </details>
+
+    <hr />
+
+    <h1>2. Conteúdo editável</h1>
+    <b>contenteditable</b> é um atributo que pode ser definido em um elemento para tornar o conteúdo editável. Funciona
+    com elementos como DIV, P, UL, etc. Você deve especificá-lo como &lt;element contenteditable=“true | false”&gt;.
+    <p>
+        Observação: quando o atributo <b>contenteditable</b> não é definido em um elemento, ele será herdado de seu pai.
+        <p>
+            Assim:
+        </p>
+        <h2> Lista de Compras (Conteúdo Editável) </h2>
+        <ul class="conteudo-editavel" contenteditable="true">
+            <li> 1. Leite Desnatado </li>
+            <li> 2. Pão francês </li>
+            <li> 3. Mel orgânico </li>
+        </ul>
+
+        <h3>Dicas rápidas:</h3>
+        <p>Um elemento span ou div podem ser editados com esse atributo e você pode adicionar qualquer conteúdo avançado
+            usando o estilo CSS. Isso será muito melhor do que lidar com campos de entrada. Experimente!</p>
+
+
+        <hr />
+        <h1>3) Marcação de conteúdo</h1>
+
+        <p>Use a tag <b>&lt;mark&gt;</b> para destacar qualquer conteúdo de texto. </p>
+
+        <h3>Código:</h3>
+
+        <pre><p> Você sabia que pode <mark>"Destacar algo interessante"</mark> apenas com uma tag HTML? </p></pre>
+
+        <h4>Dica :</h4>
+        <p>Você sempre pode alterar a cor de destaque usando css:</p>
+        <pre>
+        mark {
+          background-color: green;
+          color: #FFFFFF;
+        }
+    </pre>
+        <hr>
+        <h1>4) Tag output</h1>
+        <p>A tag <strong>&lt;output&gt;</strong> representa o resultado de um cálculo. Normalmente, este elemento define
+            uma região que será usada para exibir a saída de texto de alguns cálculos.</p>
+        <h3>Código:</h3>
+        <pre>
+        <form oninput="x.value=parseInt(a.value) * parseInt(b.value)">
+            <input type="number" id="a" value="0">
+          * <input type="number" id="b" value="0">
+                = <output name="x" for="a b"></output>
+        </form>
+        </pre>
+        <h4>Dica:</h4>
+        <p>
+            Se você estiver executando qualquer cálculo no JavaScript do lado do cliente e quiser que o resultado
+            reflita na página, use a tag <strong>&lt;output&gt;</strong>. <br> Você não precisa percorrer as etapas
+            extras para obter um elemento usando <strong>getElementById ()</strong>.
+        </p>
+        <hr>
+
+        <h2>5) Datalist</h2>
+        <p>A tag <strong>&lt;datalist&gt;</strong> especifica uma lista de opções predefinidas e permite ao usuário
+            adicionar mais opções. Ele fornece um recurso de preenchimento automático que permite obter as opções
+            desejadas com uma digitação antecipada.</p>
+        <h3>Código:</h3>
+        <pre><form action="" method="get">
+    <label for="fruta">Escolha sua fruta preferida:</label>
+    <input list="frutas" name="fruta" id="fruta">
+        <datalist id="frutas">
+           <option value="Maçã">
+           <option value="Laranja">
+           <option value="Banana">
+           <option value="Manga">
+           <option value="Abacate">
+        </datalist>
+     <input type="button" value="Clica!" onclick="console.log(`Botão Clicado! Foi escolhido ${document.getElementById('fruta').value}`)">
+ </form>
+</pre>
+
+        <h3>Dica:</h3>
+        <p>Em que é diferente da tag tradicional <strong>&lt;select&gt; &#8211; &lt;option&gt;</strong>? A tag
+            <strong>select</strong> é para selecionar um ou mais itens das opções em que você precisa percorrer a lista
+            para escolher. <strong>Datalist</strong> é o recurso avançado com suporte para preenchimento automático.</p>
+
+        <hr>
+        <h1>6) Range(Slider)</h1>
+        <p><strong>range</strong> é um tipo de <strong>input </strong>que apresenta um seletor baseado em uma
+            determinada faixa de valores.</p>
+        <h3>Código:</h3>
+
+        <form method="post">
+            <input type="range" name="range" min="0" max="100" step="1" value="" onchange="changeValue(event)" />
+        </form>
+        <div>
+            <h2><output id="output" name="result"> </output></h2>
+        </div>
+
+        <hr>
+
+        <h1>7) Controles de Mídia</h1>
+        <h2>Áudio</h2>
+        <audio controls="controls">
+            <source src="assets/Words.mp3" type="audio/mp3" />
+            Seu navegador não suporta HMTL5
+        </audio>
+
+        <h2>Vídeo</h2>
+        <video controls="controls" height="500">
+            <source src="https://drive.google.com/file/d/1hQjfMWE_BAZ4u1hwoDesYC6akX8bf1p8/preview" />
+            Seu navegador não suporta HMTL5
+        </video>
+
+
+        <!--
+        https://www.codigofonte.com.br/artigos/10-recursos-html5-uteis-que-voce-pode-nao-estar-usando
+        Estou em
+        -->
+        <script>
+            function changeValue(event) {
+                let value = event.target.value;
+                let output = document.getElementById('output');
+                output.value = value;
+            }
+        </script>
+
+
+</body>
+
+</html>

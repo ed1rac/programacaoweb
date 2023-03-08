@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de evento simples</title>
+    <script type="text/javascript">
+        function clique_botao() {
+            alert('Você clicou no botão!');
+        }
+
+        function zeraTexto() {
+            document.getElementById('exemplo').innerHTML = " ";
+        }
+
+        function copiaTexto() {
+            let campo1 = document.getElementById('campo1').value;
+            document.getElementById('campo2').value = campo1;
+        }
+    </script>
+</head>
+
+<body>
+    <button ondblclick="clique_botao();">Clique duas vezes aqui</button><br>
+    <button onmouseover="getElementById('exemplo').innerHTML=Date();" onmouseout="zeraTexto()">Qual é a hora</button>
+    <br>
+    <p id="exemplo"></p>
+    Campo 1: <input type="text" id="campo1" value="Olá, melhor turma"><br>
+    Campo 2: <input type="text" id="campo2"><br>
+    <button onclick="copiaTexto()">Copia texto</button>
+
+</body>
+
+</html>

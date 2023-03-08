@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usando o DOM</title>
+</head>
+
+<body>
+    <h1>Usando o DOM</h1>
+    <p>Sunt veniam ut qui dolore non sit nostrud labore cupidatat ipsum officia. </p>
+    <button onclick="clique_botao()">Clique aqui</button>
+
+    <button ondblclick="clique_duplo();">Clique duas vezes nesse botão!</button>
+    <button onmouseover="mostraData()" onmouseout="zeraTexto()">
+        Qual é a hora?
+    </button>
+    <p id="exemplo"></p>
+    Campo 1: <input type="text" id="campo1" value="Sei lá"><br>
+    Campo 2: <input type="text" id="campo2"><br><br>
+    <button onclick="copiaTexto()">Copia o texto</button>
+    <dialog>
+        <button>
+            Dizendo qualquer coisa
+        </button>
+    </dialog>
+</body>
+<script>
+    function zeraTexto() {
+        document.querySelector('#exemplo').innerHTML = ""
+
+    }
+
+    function mostraData() {
+        var p = document.getElementById('exemplo');
+        p.innerHTML = Date();
+    }
+
+    function clique_duplo() {
+        alert('Você clicou duas vezes');
+    }
+
+    function copiaTexto() {
+        /*    var campo1_v = document.getElementById('campo1').value
+        var campo2 = document.getElementById('campo2');
+        campo2.value = campo1_v;
+*/
+        document.getElementById('campo2').value =
+            document.getElementById("campo1").value;
+    }
+
+    function clique_botao() {
+        alert('Voce clicou no botão!')
+    }
+</script>
+
+</html>

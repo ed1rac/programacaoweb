@@ -1,0 +1,12 @@
+{
+  "name": "aluno",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cadAluno.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Edkallenn",
+  "license": "MIT",
+  "type": "module"
+}

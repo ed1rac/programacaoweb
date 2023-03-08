@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continuação HTML tags</title>
+</head>
+
+<body>
+    <h1>Este é um título H1</h1>
+    <p>Este é um parágrafo!</p> Fora do parágrafo!
+    Aqui é outra coisa diferente. <br>
+    <i>Isso aqui está em itálico!</i> E tem também o <b>negrito</b>.<br />
+    Além da tag <strong>strong</strong> que também coloca em negrito.
+    <hr />
+    <h2>Uma imagem qualquer da Internet:</h2>
+    <img src="https://miro.medium.com/max/894/1*RUtEuQzgsBAjytU2q8QHYw.png" />
+
+    <h2>Lista Ordenada</h2>
+    <ol type="i">
+        <li>Isso é um exemplo de um item de <b>lista</b></li>
+        <li>Aqui é outro exemplo!</li>
+        <li>E esse também é outro exemplo</li>
+    </ol>
+    <h2>Listas Não-ordenadas</h2>
+    <ul>
+        <li>Aqui é desordenado</li>
+        <li>Que coisa mais legal</li>
+        <li>Sextou na faculdade</li>
+    </ul>
+    <!-- 
+        Isso aqui é um comentário de código. Não tem efeito.
+    -->
+    <h2>Tópicos sobre arquitetura de computadores</h2>
+    <ul>
+        <li>
+            <a href="https://pt.wikipedia.org/wiki/Arquitetura_ARM" target="_blank">
+                Arquitetura ARM
+            </a>
+        </li>
+        <li> <a target="_blank" href="https://pt.wikipedia.org/wiki/Arquitetura_ARM">RISC</a></li>
+        <li><a target="_blank" href="https://pt.wikipedia.org/wiki/CISC">CISC</a></li>
+        <li><a target="_blank"
+                href="https://pt.wikipedia.org/wiki/Palavra_(ci%C3%AAncia_da_computa%C3%A7%C3%A3o)#:~:text=Em%20ci%C3%AAncia%20da%20computa%C3%A7%C3%A3o%2C%20palavra,processado%20em%20conjunto%20numa%20m%C3%A1quina.">
+                Palavra</a>
+            (word) computação</li>
+    </ul>
+
+    <form>Digite o seu nome:
+        <input type="text" name="nome" placeholder="Digite seu nome" /> <br>
+        Email:
+        <input type="email" placeholder="Digite seu email, mané..." /> <br>
+        Digite sua idade:
+        <input type="number" value="0" /><br>
+
+        Escolha o seu videogame antigo preferido: <br>
+        <input type="radio" name="videogame" checked />SNES<br>
+        <input type="radio" name="videogame" />Mega Drive<br>
+        <input type="radio" name="videogame" />PS1<br>
+        <input type="radio" name="videogame" />Atari<br>
+
+        Qual videogame antigo você possuiu <br>
+        <input type="checkbox" name="console" /> SNES <br>
+        <input type="checkbox" name="console" checked /> Mega Drive <br>
+        <input type="checkbox" name="console" /> PS1 <br>
+        <input type="checkbox" name="console" /> Atari <br>
+
+        Que dia você nasceu? <input type="datetime-local" name="data" /> <br>
+        <input type="button" name="seila_entende" value="Sei lá, entende?" onclick="alert('Olá mundo, cruel!');" />
+        <input type="reset" name="reset" value="RESETE-ME!" />
+        <p />
+        <label for="cars">Escolha um carro:</label> <br>
+        <select name="cars" id="cars">
+            <option value="Corolla">Corolla </option>
+            <option value="BMW 320">BMW 320 </option>
+            <option value="Volvo"> Volvo</option>
+            <option value="Mecedes">Mecedes </option>
+        </select>
+        <p />
+        <input type="submit" value="MANDA!">
+
+
+    </form>
+
+    <figure>
+        <img src="https://t2.tudocdn.net/636634?w=1000&fit=clip" alt="Foto aleatória" height="300">
+        <figcaption>Foto aleatória da Net</figcaption>
+    </figure>
+
+</body>
+
+</html>

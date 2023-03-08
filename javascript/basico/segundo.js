@@ -1,0 +1,1 @@
+console.log('Estamos testando a terceira e principal forma!');

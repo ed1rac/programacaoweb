@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos legais</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 10pt;
+        }
+
+        .conteudo-editavel {
+            border: 1px solid red;
+            padding: 10px, 10px, 10px, 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tag Details</h1>
+    Fornece detalhes sib demanda do usuário
+    <details>
+        <summary>Clique aqui para mais detalhes</summary>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Profissão</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Edkallenn</td>
+                <td>Lima</td>
+                <td>Professor</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Elaine</td>
+                <td>Medeiros</td>
+                <td>Professor</td>
+            </tr>
+        </table>
+    </details>
+
+    <h1>Conteúdos Editáveis</h1>
+    <h3>Lista de compras</h3>
+    <ul contenteditable="true" class="conteudo-editavel">
+        <li> 1. Leite Desnatado </li>
+        <li> 2. Pão francês </li>
+        <li> 3. Mel orgânico </li>
+    </ul>
+
+    <h1>Marcação de conteúdo</h1>
+    <p>Você sabia que qualquer conteúdo
+        <mark>
+            pode ser destacado pela tag &lt;mark&gt;
+        </mark>
+    </p>
+
+    <h1>4) Tag output</h1>
+    <p>A tag <strong>&lt;output&gt;</strong> representa o resultado de um cálculo. Normalmente, este elemento define
+        uma região que será usada para exibir a saída de texto de alguns cálculos.</p>
+    <h3>Código:</h3>
+    <pre>
+        <form oninput="x.value=parseInt(a.value) * parseInt(b.value)">
+            <input type="number" id="a" value="0">
+          * <input type="number" id="b" value="0">
+                = <output name="x" for="a b"></output>
+        </form>
+        </pre>
+    <h4>Dica:</h4>
+    <p>
+        Se você estiver executando qualquer cálculo no JavaScript do lado do cliente e quiser que o resultado
+        reflita na página, use a tag <strong>&lt;output&gt;</strong>. <br> Você não precisa percorrer as etapas
+        extras para obter um elemento usando <strong>getElementById ()</strong>.
+    </p>
+    <hr>
+    <h2>5) Datalist</h2>
+    <p>A tag <strong>&lt;datalist&gt;</strong> especifica uma lista de opções predefinidas e permite ao usuário
+        adicionar mais opções. Ele fornece um recurso de preenchimento automático que permite obter as opções
+        desejadas com uma digitação antecipada.</p>
+    <h3>Código:</h3>
+    <pre><form action="" method="get">
+    <label for="fruta">Escolha sua fruta preferida:</label>
+    <input list="frutas" name="fruta" id="fruta">
+        <datalist id="frutas">
+           <option value="Maçã">
+           <option value="Laranja">
+           <option value="Banana">
+           <option value="Manga">
+           <option value="Abacate">
+        </datalist>
+     <input type="button" value="Clica!" onclick="console.log(`Botão Clicado! Foi escolhido ${document.getElementById('fruta').value}`)">
+ </form>
+</pre>
+
+    <h3>Dica:</h3>
+    <p>Em que é diferente da tag tradicional <strong>&lt;select&gt; &#8211; &lt;option&gt;</strong>? A tag
+        <strong>select</strong> é para selecionar um ou mais itens das opções em que você precisa percorrer a lista
+        para escolher. <strong>Datalist</strong> é o recurso avançado com suporte para preenchimento automático.</p>
+
+    <hr>
+
+    <h1>6) Range(Slider)</h1>
+    <p><strong>range</strong> é um tipo de <strong>input </strong>que apresenta um seletor baseado em uma
+        determinada faixa de valores.</p>
+    <h3>Código:</h3>
+
+    <form method="post">
+        <input type="range" name="range" min="0" max="100" step="1" value="" onchange="changeValue(event)" />
+    </form>
+    <div>
+        <h2><output id="output" name="result"> </output></h2>
+    </div>
+
+    <hr>
+
+    <h1>7) Controles de Mídia</h1>
+    <h2>Áudio</h2>
+    <audio controls="controls">
+        <source src="assets/CoolRide.mp3" type="audio/mp3" />
+        Seu navegador não suporta HMTL5
+    </audio>
+
+    <h2>Vídeo</h2>
+    <video controls="controls" height="400">
+        <source src="assets/ana.mp4" />
+        Seu navegador não suporta HMTL5
+    </video>
+
+    <script>
+        function changeValue(event) {
+            let value = event.target.value;
+            let output = document.getElementById('output');
+            output.value = value;
+        }
+    </script>
+
+</body>
+
+</html>
