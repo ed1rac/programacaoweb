@@ -1,8 +1,8 @@
 services:
-  php:
+  php:    
     build: .
     ports:
-      - "80:80"
+      - "8013:8013"
       - "443:443"
     volumes:
       - ./:/var/www/html
