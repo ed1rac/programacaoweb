@@ -1,49 +1,38 @@
-### Aulas de Programação Web do Prof. Edkallenn Lima 
+# 🌐 Aulas de Programação Web — Unipê
+
+<div align="center">
+
+[![PHP](https://img.shields.io/badge/PHP-8.x_%2B_PDO-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/)
+[![HTML5/CSS3](https://img.shields.io/badge/Frontend-HTML5_%2B_CSS3-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/)
+[![Unipê](https://img.shields.io/badge/Instituição-Unipê-blue?style=for-the-badge)](https://www.unipe.edu.br/)
+
+**Códigos práticos desenvolvidos durante as aulas das disciplinas de Programação Web (ADS e Sistemas para Internet) e Aplicações para Internet (Ciência da Computação).**
+
+</div>
+
 ---
 
-[Descrição do projeto](#Descricao-do-projeto)
+## 👨‍🏫 A Metodologia "Live-Coding"
 
-[Ementa da Disciplina](#Ementa-da-Disciplina)
+> *"Os commits deste repositório são efetuados diretamente dentro de sala de aula, enquanto os códigos são construídos passo a passo com os alunos."*
 
-[Slides usados em sala]()
-
-[Página com os programas]()
-
-[Contatos do professor:](#Contatos-do-professor)
+Essa dinâmica permite aos estudantes acompanhar desde o primeiro `<html>` até a conexão robusta com bancos de dados relacionais e o consumo de APIs REST.
 
 ---
 
-## Descrição do projeto
+## 📂 Módulos do Curso
 
-programação Web do Professor Ed é um projeto do [professor Edkallenn](https://edkallenn.github.io/) com o objetivo de tornar público todos os programas e slides utilizados nas aulas das disciplinas "Programação Web" (cursos de ADS e Sistemas para Internet) e "Aplicações para Internet" (Ciência da Computação) da [Unipê](https://www.unipe.edu.br/).
-
-Os Commits são todos efetuados dentro de sala enquanto os programas vão sendo codificados junto com os alunos.
-
-![Badge](https://img.shields.io/badge/Prof-Ed-%237159c1?style=for-the-badge&logo=ghost)
-![Badge](http://img.shields.io/static/v1?label=License&message=MIT&color=green&style=for-the-badge)
-![Badge](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge)
-
-## Ementa da Disciplina
-
-A ementa da disciplina contempla o estudo das tecnologias web HTML, CSS e Javascript. É apresentado conceitos de desenvolvimento Client-Side, Criação de objetos JSON e manipulação do Document Object Model do Browser para interação com os elementos do HTML via Script. A disciplina de Programação Web ainda tem uma parte significativa de desenvolvimento server-side em PHP.
-
-## Contatos do professor: 
-
-- Página pessoal: <https://edkallenn.github.io/>
-- e-mail: [edkallenn@yahoo.com.br](mailto:edkallenn@yahoo.com.br)
-- Twitter: [@edkallenn](https://twitter.com/edkallenn)
-- Facebook: <https://www.facebook.com/edkallenn>
-- Instagram: [@edkallenn](https://www.instagram.com/edkallenn/)
-- Blog: <https://professored.wordpress.com/>
-- Linkedin: <https://www.linkedin.com/in/edkallenn/>
-
-Até mais e bons programas!
+- 📁 `basico/`: Fundamentos da linguagem PHP, variáveis, operadores e estruturas de controle.
+- 📁 `avancando_arrays_funcoes/`: Manipulação avançada de arrays multidimensionais, funções e escopos.
+- 📁 `codigos-db/`: Integração segura com bancos de dados MySQL e PostgreSQL utilizando **PDO** (*PHP Data Objects*) e *Prepared Statements* contra SQL Injection.
+- 📁 `api/`: Construção e consumo de endpoints de dados em formato JSON.
 
 ---
 
 ## ☕ Apoie o Projeto (Me Pague um Café / Buy Me a Coffee)
 
-Este projeto é desenvolvido com dedicação e carinho. Se este projeto foi útil para os seus estudos, trabalho ou produtividade diária e você quiser apoiar o desenvolvimento contínuo:
+Este projeto é desenvolvido com dedicação e carinho à disseminação do conhecimento e da tecnologia. Se ele foi útil para os seus estudos, aulas, trabalho ou produtividade diária e você quiser apoiar o desenvolvimento contínuo:
 
 - ☕ **Buy Me a Coffee (Internacional / Cartão / QR Code)**:
   - 👉 **[https://buymeacoffee.com/edkallenn](https://buymeacoffee.com/edkallenn)**
