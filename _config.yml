@@ -1,0 +1,5 @@
+theme: jekyll-theme-dinky
+title: "🌐 Programação Web — Uninorte"
+description: "Aulas e projetos práticos de desenvolvimento web com PHP, HTML5, CSS3, JavaScript e MySQL."
+kramdown:
+  parse_block_html: true
