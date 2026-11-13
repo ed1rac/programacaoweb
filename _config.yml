@@ -1,5 +1,19 @@
-theme: jekyll-theme-dinky
-title: "🌐 Programação Web — Uninorte"
+theme: jekyll-theme-cayman
+title: "🌐 Programação Web — Unipê"
 description: "Aulas e projetos práticos de desenvolvimento web com PHP, HTML5, CSS3, JavaScript e MySQL."
 kramdown:
   parse_block_html: true
+exclude:
+  - api/
+  - avancando_arrays_funcoes/
+  - basico/
+  - codigos-db/
+  - colecoes_com_arrays/
+  - docker/
+  - forms/
+  - html/
+  - javascript/
+  - objetos/
+  - projeto-basico/
+  - quarta/
+  - web-basico/
