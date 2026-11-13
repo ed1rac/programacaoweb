@@ -1,14 +1,13 @@
 # 🌐 Aulas de Programação Web — Unipê
 
 <div align="center">
-
-[![PHP](https://img.shields.io/badge/PHP-8.x_%2B_PDO-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)
-[![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/)
-[![HTML5/CSS3](https://img.shields.io/badge/Frontend-HTML5_%2B_CSS3-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/)
-[![Unipê](https://img.shields.io/badge/Instituição-Unipê-blue?style=for-the-badge)](https://www.unipe.edu.br/)
-
-**Códigos práticos desenvolvidos durante as aulas das disciplinas de Programação Web (ADS e Sistemas para Internet) e Aplicações para Internet (Ciência da Computação).**
-
+  <p>
+    <a href="https://www.php.net/"><img src="https://img.shields.io/badge/PHP-8.x_%2B_PDO-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP"></a>
+    <a href="https://developer.mozilla.org/"><img src="https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"></a>
+    <a href="https://developer.mozilla.org/"><img src="https://img.shields.io/badge/Frontend-HTML5_%2B_CSS3-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5/CSS3"></a>
+    <a href="https://www.unipe.edu.br/"><img src="https://img.shields.io/badge/Instituição-Unipê-blue?style=for-the-badge" alt="Unipê"></a>
+  </p>
+  <p><strong>Códigos práticos desenvolvidos durante as aulas das disciplinas de Programação Web (ADS e Sistemas para Internet) e Aplicações para Internet (Ciência da Computação).</strong></p>
 </div>
 
 ---
